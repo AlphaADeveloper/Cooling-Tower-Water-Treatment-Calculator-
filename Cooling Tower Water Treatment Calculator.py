@@ -1,24 +1,24 @@
 #city Water
-City_Conductivity=1240
-City_PH=8.45
-City_Chlorides=450
-City_Alkilinity=100
-City_Hardness =8
+City_Conductivity=0
+City_PH=0
+City_Chlorides=0
+City_Alkilinity=0
+City_Hardness =0
 
 #Tower1
-Tower1_Conductivity=3200
-Tower1_PH=9.00
-Tower1_Chlorides=850
-Tower1_Alkilinity=250
-Tower1_Phos=8
-Tower1_Hardness=20
+Tower1_Conductivity=0
+Tower1_PH=0
+Tower1_Chlorides=0
+Tower1_Alkilinity=0
+Tower1_Phos=0
+Tower1_Hardness=0
 
 #Closed loop1
-Loop1_Conductivity=11.00
-Loop1_PH=9.00
-Loop1_Molybdate=22
+Loop1_Conductivity=0
+Loop1_PH=0
+Loop1_Molybdate=0
 Loop1_Nitrite=0
-Loop1_Iron=1
+Loop1_Iron=0
 
 #Tower2
 Tower2_Conductivity=0
@@ -62,7 +62,7 @@ Tower4_Hardness=0
 #Closed loop4
 Loop4_Conductivity=0
 Loop4_PH=0
-Loop4_Nitrite=0
+Loop4_Nitrite=8
 Loop4_Molybdate=0
 Loop4_Iron=0
 
@@ -125,17 +125,20 @@ Hardness_Tower3=Tower3_Hardness*17.1
 Hardness_Tower4=Tower4_Hardness*17.1
 
 #Closed Loop Calculation
-#loop_one_iron=Loop1_Iron*8.5
-#loop_two_iron=Loop2_Iron*8.5
-#loop_three_iron=Loop3_Iron*8.5
-#loop_four_iron=Loop4_Iron*8.5
+Loop_one_iron=Loop1_Iron*8.5
+loop_two_iron=Loop2_Iron*8.5
+loop_three_iron=Loop3_Iron*8.5
+loop_four_iron=Loop4_Iron*8.5
 loop_one_Molybdate=Loop1_Molybdate*8.5
 loop_two_Molybdate=Loop2_Molybdate*8.5
 loop_three_Molybdate=Loop3_Molybdate*8.5
 loop_four_Molybdate=Loop4_Molybdate*8.5
 
 #Closed Loop Nitrite Calculation
-
+Loop_One_Nitrite=Loop1_Nitrite*10
+Loop_Two_Nitrite=Loop2_Nitrite*10
+Loop_Three_Nitrite=Loop3_Nitrite*10
+Loop_Four_Nitrite=Loop4_Nitrite*10
 
 
 
@@ -172,7 +175,7 @@ if Loop1_Conductivity>=1:
 if Loop1_PH>=1:
   print("Closed Loop One Ph:",Loop1_PH)
 if Loop1_Nitrite>=1:
-  print("Closed Loop One Nitrite:",Loop1_Nitrite) 
+  print("Closed Loop One Nitrite:",Loop_One_Nitrite) 
 if Loop1_Molybdate>=1:
   print("Closed loop one Molybdate:", loop_one_Molybdate)
 if Loop1_Iron>=1:
@@ -200,7 +203,7 @@ if Loop2_Conductivity>=1:
 if Loop2_PH>=1:
   print("Closed Loop Two PH:", Loop2_PH)
 if Loop2_Nitrite>=1:
-  print("Closed Loop Two Nitrite:", Loop2_Nitrite)
+  print("Closed Loop Two Nitrite:", Loop_Two_Nitrite)
 if Loop2_Molybdate>=1:
   print("Closed Loop Two Molybdate:", Loop2_Molybdate)
 if Loop2_Iron>=1:
@@ -227,7 +230,7 @@ if Loop3_Conductivity>=1:
 if Loop3_PH>=1:
   print("Closed Loop Three PH:", Loop3_PH)
 if Loop3_Nitrite>=1:
-  print("Closed Loop Three Nitrite:", Loop3_Nitrite)
+  print("Closed Loop Three Nitrite:", Loop_Three_Nitrite)
 if Loop3_Molybdate>=1:
   print("Closed Loop Three Molybdate:", Loop3_Molybdate)
 if Loop3_Iron>=1:
@@ -251,10 +254,10 @@ print()
 
 if Loop4_Conductivity>=1:
   print("Closed Loop Four Conductivity:",Loop4_Conductivity)
-if Loop4_Conductivity>=1:
+if Loop4_PH>=1:
   print("Closed Loop Four PH:",Loop4_PH)
 if Loop4_Nitrite>=1:
-  print("Closed Loop Four Nitrite:",Loop4_Nitrite)
+  print("Closed Loop Four Nitrite:",Loop_Four_Nitrite)
 if Loop4_Molybdate>=1:
   print("Closed Loop Four Molybdate:",Loop4_Molybdate)
 if Loop4_Iron>=1:
